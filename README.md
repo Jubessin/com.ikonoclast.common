@@ -32,3 +32,9 @@ Package of features common to the development of Ikonoclast projects.
 - RelationalMapper
 - RuntimeContainer
 - Viewable
+
+### Types
+
+- Comparison
+- Direction
+- Range
