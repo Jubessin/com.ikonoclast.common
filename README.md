@@ -1,6 +1,6 @@
 Common
 
-Package of features common to the development of Ikonoclast projects.
+Unity package used in the development of Ikonoclast projects, containing common functionality.
 
 ## Editor Tooling
 
