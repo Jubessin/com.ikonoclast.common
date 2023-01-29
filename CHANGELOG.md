@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0]
+
+### Added
+
+- added editor functionality (panels, icons, shortcuts, interfaces)
+- added value constants
+- added InterpretedValue class
+
 ## [1.0.0]
 
 ### Added

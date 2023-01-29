@@ -4,6 +4,20 @@ Package of features common to the development of Ikonoclast projects.
 
 ## Editor Tooling
 
+### Interfaces
+
+- ICustomEditorWindow
+- IEditorSaveObject
+
+### Panels
+
+### Utilities
+
+- CustomEditorHelper
+- Shortcuts
+- PanelUtils
+- UnityIcons
+
 ## Runtime Support
 
 ### Constants
@@ -32,9 +46,3 @@ Package of features common to the development of Ikonoclast projects.
 - RelationalMapper
 - RuntimeContainer
 - Viewable
-
-### Types
-
-- Comparison
-- Direction
-- Range
