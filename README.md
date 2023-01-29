@@ -11,6 +11,9 @@ Package of features common to the development of Ikonoclast projects.
 
 ### Panels
 
+- Panel
+- SettingsPanel
+
 ### Utilities
 
 - CustomEditorHelper
@@ -23,6 +26,7 @@ Package of features common to the development of Ikonoclast projects.
 ### Constants
 
 - Colors
+- Values
 
 ### Interfaces
 
@@ -46,3 +50,10 @@ Package of features common to the development of Ikonoclast projects.
 - RelationalMapper
 - RuntimeContainer
 - Viewable
+
+### Types
+
+- Comparison
+- Direction
+- InterpretedValue
+- Range
