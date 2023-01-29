@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] --- 2023-01-29
+
+### Added
+
+- added additional serialization construct for ISaveObject.
+- added HasKey(string) method to Map class
+
+
 ## [2.0.0]
 
 ### Added

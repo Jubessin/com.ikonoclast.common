@@ -14,15 +14,21 @@
         }
 
         /// <summary>
-        /// Write saveable data into a <see cref="Map"/> object.
+        /// Write saveable data into a new <see cref="Map"/> object.
         /// </summary>
         /// <returns></returns>
         Map Serialize();
 
         /// <summary>
+        /// Write saveable data into an existing <see cref="Map"/> object.
+        /// </summary>
+        /// <returns></returns>
+        void Serialize(Map map, bool overwrite = false);
+
+        /// <summary>
         /// Read data from a <see cref="Map"/> object.
         /// </summary>
-        /// <param name="dict"></param>
-        void Deserialize(Map dict);
+        /// <param name="map"></param>
+        void Deserialize(Map map);
     }
 }

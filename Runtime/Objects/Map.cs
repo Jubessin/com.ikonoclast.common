@@ -67,6 +67,9 @@ namespace Ikonoclast.Common
 
         #region Methods
 
+        public bool HasKey(string key) =>
+            _data.ContainsKey(key);
+
         public int GetInt32(string key) =>
             Convert.ToInt32(this[key]);
         public long GetInt64(string key) =>
