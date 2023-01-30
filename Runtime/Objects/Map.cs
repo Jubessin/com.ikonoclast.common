@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 namespace Ikonoclast.Common
 {
+    /// <summary>
+    /// Identifiable, typeless dictionary with overrideable getter, setter.
+    /// </summary>
     [Serializable]
-    public class Map
+    public class Map : IIdentity<string>
     {
         #region Fields
 
@@ -114,6 +117,9 @@ namespace Ikonoclast.Common
         public bool GetRawBoolean(string key) =>
             (bool)this[key];
 
+        /// <summary>
+        /// Explicitly cast dictionary value to <see cref="bool"/>.
+        /// </summary>
         public void GetRawBoolean(string key, out bool value)
         {
             value = (bool)this[key];
@@ -123,7 +129,7 @@ namespace Ikonoclast.Common
         /// Directly access an object from the dictionary.
         /// <br></br>
         /// <br></br>
-        /// Note: <b>Do not attempt to cast the returned value unless absolutely necessary.</b>
+        /// Note: <b>Cast the returned value at your own risk.</b>
         /// </summary>
         public object GetUnsafe(string key)
             => this[key];
@@ -132,7 +138,7 @@ namespace Ikonoclast.Common
         /// Directly access an object from the dictionary.
         /// <br></br>
         /// <br></br>
-        /// Note: <b>Do not attempt to cast the returned value unless absolutely necessary.</b>
+        /// Note: <b>Cast the returned value at your own risk.</b>
         /// </summary>
         public void GetUnsafe(string key, out object value)
         {
