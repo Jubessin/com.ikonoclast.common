@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [3.0.0] --- 2023-01-29
+## [2.2.0] --- 2023-01-29
 
 ### Added
 
 - Blackboard objects (Blackboard, ObservableBlackboard, ReadOnlyBlackboard)
+
+### Changed
+
+- added generic type to IIdentity interface
 
 ## [2.1.0] --- 2023-01-29
 
@@ -19,7 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - added additional serialization construct for ISaveObject.
 - added HasKey(string) method to Map class
-
 
 ## [2.0.0]
 
