@@ -1,10 +1,10 @@
 ﻿namespace Ikonoclast.Common
 {
-    public interface IIdentity
+    public interface IIdentity<T>
     {
-        int ID 
-        { 
-            get; 
+        T ID
+        {
+            get;
         }
     }
 }
