@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- IDispatcher interface for sending Dispatch objects to IReceiver implemeters.
+- ICreatableAsset, ISingleInstanceAsset interfaces
+- AssetCreator EditorWindow
+
 ## [2.3.0] --- 2023-01-30
 
 ### Changed
