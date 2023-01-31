@@ -6,14 +6,6 @@
     public interface ISaveObject : ISave, IIdentity<string>
     {
         /// <summary>
-        /// Identifier string in saving/loading.
-        /// </summary>
-        string ID
-        {
-            get;
-        }
-
-        /// <summary>
         /// Write saveable data into a new <see cref="Map"/> object.
         /// </summary>
         /// <returns></returns>

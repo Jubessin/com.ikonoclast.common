@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - AssetCreator EditorWindow
 
+## [2.4.1]
+
+### Removed
+
+- ID field from ISaveObject interface
+
 ## [2.4.0] --- 2023-01-31
 
 ### Added
