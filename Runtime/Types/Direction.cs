@@ -6,7 +6,7 @@ namespace Ikonoclast.Common
     [Serializable]
     public struct VerticalDirection : IDirection
     {
-        private static VerticalDirection
+        public static readonly VerticalDirection
             UP = new VerticalDirection(true, false),
             DOWN = new VerticalDirection(false, true);
 
@@ -98,7 +98,7 @@ namespace Ikonoclast.Common
     [Serializable]
     public struct HorizontalDirection : IDirection
     {
-        private static HorizontalDirection
+        public static readonly HorizontalDirection
             LEFT = new HorizontalDirection(true, false),
             RIGHT = new HorizontalDirection(false, true);
 

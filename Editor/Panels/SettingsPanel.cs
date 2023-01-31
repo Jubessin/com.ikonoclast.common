@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace Ikonoclast.Common.Editor
 {
+    using Ikonoclast.Common;
+
     using static PanelUtils;
     using static CustomEditorHelper;
 
     /// <summary>
     /// Base class for settings panels.
     /// </summary>
-    public abstract class SettingsPanel : Panel
+    public abstract class SettingsPanel : Panel, IEditorSaveObject
     {
         #region Events
 
@@ -186,7 +188,8 @@ namespace Ikonoclast.Common.Editor
 
         public abstract void Reset();
         public abstract Map Serialize();
-        public abstract void Deserialize(Map dict);
+        public abstract void Serialize(Map map, bool overwrite);
+        public abstract void Deserialize(Map map);
 
         #endregion
     }

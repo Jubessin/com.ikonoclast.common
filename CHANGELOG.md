@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] --- 2023-01-30
+
+### Changed
+
+- added IEditorSaveObject interface to SettingsPanel
+- exposed static fields on HorizontalDirection and VerticalDirection, and made readonly
+
 ## [2.2.0] --- 2023-01-29
 
 ### Added
