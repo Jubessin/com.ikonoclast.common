@@ -3,7 +3,7 @@
     /// <summary>
     /// Interface for complex saveable objects.
     /// </summary>
-    public interface ISaveObject : ISave
+    public interface ISaveObject : ISave, IIdentity<string>
     {
         /// <summary>
         /// Identifier string in saving/loading.

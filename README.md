@@ -31,6 +31,7 @@ Unity package used in the development of Ikonoclast projects, containing common 
 ### Interfaces
 
 - IContainer
+- ICreatableAsset
 - IDirection
 - IIdentity
 - IObservable
@@ -40,6 +41,7 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - IRelationalMapper
 - ISave
 - ISaveObject
+- ISingleInstanceAsset
 
 #### Blackboards
 
@@ -66,6 +68,6 @@ Unity package used in the development of Ikonoclast projects, containing common 
 ### Types
 
 - Comparison
-- Direction
+- Direction (Horizontal, Vertical)
 - InterpretedValue
 - Range
