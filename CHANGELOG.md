@@ -9,9 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- IDispatcher interface for sending Dispatch objects to IReceiver implemeters.
-- ICreatableAsset, ISingleInstanceAsset interfaces
 - AssetCreator EditorWindow
+
+## [2.4.0] --- 2023-01-31
+
+### Added
+
+- IDispatcher interface for sending Dispatch objects to IReceiver implemeters.
+- ICreatableAsset interface 
+- ISingleInstanceAsset interface
+
+### Changed
+
+- editor .asmdef platform is now editor-only
 
 ## [2.3.0] --- 2023-01-30
 
