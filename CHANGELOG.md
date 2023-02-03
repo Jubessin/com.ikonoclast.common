@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - AssetCreator EditorWindow
 
+## [2.5.0]
+
+### Added
+
+- added 'NONE' static readonly fields for Horizontal and Vertical directions
+
+### Changed
+
+- added ICreatableAsset interface to Entity and Definition scriptable objects
+
 ## [2.4.1]
 
 ### Removed

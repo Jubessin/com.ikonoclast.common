@@ -8,7 +8,8 @@ namespace Ikonoclast.Common
     {
         public static readonly VerticalDirection
             UP = new VerticalDirection(true, false),
-            DOWN = new VerticalDirection(false, true);
+            DOWN = new VerticalDirection(false, true),
+            NONE = new VerticalDirection(false, false);
 
         #region Properties
 
@@ -100,7 +101,8 @@ namespace Ikonoclast.Common
     {
         public static readonly HorizontalDirection
             LEFT = new HorizontalDirection(true, false),
-            RIGHT = new HorizontalDirection(false, true);
+            RIGHT = new HorizontalDirection(false, true),
+            NONE = new HorizontalDirection(false, false);
 
         #region Properties
 
