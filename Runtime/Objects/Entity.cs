@@ -2,7 +2,7 @@
 
 namespace Ikonoclast.Common
 {
-    public class Entity : ScriptableObject
+    public class Entity : ScriptableObject, ICreatableAsset
     {
         #region Properties
 

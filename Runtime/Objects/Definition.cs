@@ -2,5 +2,5 @@
 
 namespace Ikonoclast.Common
 {
-    public abstract class Definition : ScriptableObject { }
+    public abstract class Definition : ScriptableObject, ICreatableAsset { }
 }
