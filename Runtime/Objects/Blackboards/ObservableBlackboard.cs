@@ -42,7 +42,7 @@ namespace Ikonoclast.Common
             protected get => base[key];
             set
             {
-                if (base[key] == value)
+                if (base[key]?.Equals(value) == true)
                     return;
 
                 base[key] = value;
@@ -59,7 +59,7 @@ namespace Ikonoclast.Common
         {
             set
             {
-                if (base[key] == value)
+                if (base[key]?.Equals(value) == true)
                     return;
 
                 base[key, persistent] = value;

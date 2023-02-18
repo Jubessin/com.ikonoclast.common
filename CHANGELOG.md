@@ -12,6 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - AssetCreator EditorWindow
 - Logger
 
+## [2.5.1] --- 2023-02-17
+
+### Changed
+
+- replace sealed with static modifier for Colors class
+- test for data equality instead of instance equality in ObservableBlackboard class
+
 ## [2.5.0]
 
 ### Added
