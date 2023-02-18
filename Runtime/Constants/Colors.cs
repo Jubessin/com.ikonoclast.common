@@ -2,7 +2,7 @@
 
 namespace Ikonoclast.Common
 {
-    public sealed class Colors
+    public static class Colors
     {
         public static Color Clear
         {
