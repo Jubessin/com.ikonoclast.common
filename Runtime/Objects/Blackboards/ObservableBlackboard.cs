@@ -78,7 +78,7 @@ namespace Ikonoclast.Common
 
         public void AddObserver(IObserver observer)
         {
-            if (!observers.Contains(observer))
+            if (observer != null && !observers.Contains(observer))
             {
                 observers.Add(observer);
             }

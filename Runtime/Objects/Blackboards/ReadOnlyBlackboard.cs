@@ -21,6 +21,10 @@ namespace Ikonoclast.Common
 
         #region Methods
 
+        public T Get<T>(string key) =>
+            source.Get<T>(key);
+        public object Get(string key) =>
+            source.Get(key);
         public int GetInt32(string key) =>
             source.GetInt32(key);
         public long GetInt64(string key) =>
@@ -34,6 +38,14 @@ namespace Ikonoclast.Common
         public string GetString(string key) =>
             source.GetString(key);
 
+        public void Get<T>(string key, out T value)
+        {
+            value = source.Get<T>(key);
+        }
+        public void Get(string key, out object value)
+        {
+            value = source.Get(key);
+        }
         public void GetInt32(string key, out int value)
         {
             value = source.GetInt32(key);
@@ -57,26 +69,6 @@ namespace Ikonoclast.Common
         public void GetString(string key, out string value)
         {
             value = source.GetString(key);
-        }
-
-        /// <summary>
-        /// Directly access an object from the dictionary.
-        /// <br></br>
-        /// <br></br>
-        /// Note: <b>Cast the returned value at your own risk.</b>
-        /// </summary>
-        public object GetUnsafe(string key)
-            => source.GetUnsafe(key);
-
-        /// <summary>
-        /// Directly access an object from the dictionary.
-        /// <br></br>
-        /// <br></br>
-        /// Note: <b>Cast the returned value at your own risk.</b>
-        /// </summary>
-        public void GetUnsafe(string key, out object value)
-        {
-            value = source.GetUnsafe(key);
         }
 
         public bool TryAddObserver(IObserver observer)
