@@ -73,6 +73,12 @@ namespace Ikonoclast.Common
         public bool HasKey(string key) =>
             _data.ContainsKey(key);
 
+        public T Get<T>(string key) =>
+            this[key] is T tValue
+                ? tValue
+                : default;
+        public object Get(string key) =>
+            this[key];
         public int GetInt32(string key) =>
             Convert.ToInt32(this[key]);
         public long GetInt64(string key) =>
@@ -86,6 +92,16 @@ namespace Ikonoclast.Common
         public string GetString(string key) =>
             (string)this[key];
 
+        public void Get<T>(string key, out T value)
+        {
+            value = this[key] is T tValue
+                ? tValue
+                : default;
+        }
+        public void Get(string key, out object value)
+        {
+            value = this[key];
+        }
         public void GetInt32(string key, out int value)
         {
             value = Convert.ToInt32(this[key]);
@@ -123,26 +139,6 @@ namespace Ikonoclast.Common
         public void GetRawBoolean(string key, out bool value)
         {
             value = (bool)this[key];
-        }
-
-        /// <summary>
-        /// Directly access an object from the dictionary.
-        /// <br></br>
-        /// <br></br>
-        /// Note: <b>Cast the returned value at your own risk.</b>
-        /// </summary>
-        public object GetUnsafe(string key)
-            => this[key];
-
-        /// <summary>
-        /// Directly access an object from the dictionary.
-        /// <br></br>
-        /// <br></br>
-        /// Note: <b>Cast the returned value at your own risk.</b>
-        /// </summary>
-        public void GetUnsafe(string key, out object value)
-        {
-            value = this[key];
         }
 
         protected void Copy(Map map)

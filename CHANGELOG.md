@@ -12,6 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - AssetCreator EditorWindow
 - Logger
 
+## [3.0.0] --- 2023-02-21
+
+### Added
+
+- generic type 'Get' method for IBlackboard
+- null-protection when adding observers to ObservableBlackboard
+
+### Changed
+
+- IBlackboard 'GetUnsafe' method signature
+
 ## [2.5.1] --- 2023-02-17
 
 ### Changed
