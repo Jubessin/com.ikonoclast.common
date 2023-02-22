@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - AssetCreator EditorWindow
 - Logger
 
+## [3.0.1] --- 2023-02-22
+
+### Changed
+
+- Map.Copy(...) now overwrites instead of creating a new object
+
 ## [3.0.0] --- 2023-02-21
 
 ### Added

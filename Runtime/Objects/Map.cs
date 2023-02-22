@@ -146,7 +146,10 @@ namespace Ikonoclast.Common
             if (map == null || map._data == null)
                 return;
 
-            _data = new Dictionary<string, object>(map._data);
+            foreach (var kvp in map._data)
+            {
+                _data[kvp.Key] = kvp.Value;
+            }
         }
 
         #endregion
