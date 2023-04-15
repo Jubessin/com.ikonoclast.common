@@ -174,6 +174,12 @@ namespace Ikonoclast.Common.Editor
             ? PrefabUtility.GetCorrespondingObjectFromSource(go) != null
             : false;
 
+        /// <summary>
+        /// Generate a unique ID for calls to GUI.Window.
+        /// </summary>
+        /// <detail>
+        /// Useful when using several windows within one OnGUI call.
+        /// </detail>
         public static int GenerateUniqueSessionID()
         {
             int uniqueID = UnityEngine.Random.Range(1, int.MaxValue);
