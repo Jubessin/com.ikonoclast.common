@@ -9,8 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- AssetCreator EditorWindow
 - Logger
+
+## [3.1.0] --- 2023-04-15
+
+### Added
+
+- additional content to UnityIcons
+- additional helper methods in CustomEditorHelper
+
+### Changed
+
+- added warning when attempting to get CustomEditorHelper.ScreenMousePosition with null event
 
 ## [3.0.1] --- 2023-02-22
 
