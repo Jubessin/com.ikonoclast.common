@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 using UnityObject = UnityEngine.Object;
 
@@ -12,8 +13,6 @@ namespace Ikonoclast.Common.Editor
         public const int
             LEFT_CLICK = 0,
             RIGHT_CLICK = 1;
-
-        #region Inner
 
         /// <summary>
         /// Context menu item.
@@ -69,9 +68,10 @@ namespace Ikonoclast.Common.Editor
             }
         }
 
-        #endregion
-
         #region Fields
+
+        private static readonly HashSet<int>
+            sessionIDs = new HashSet<int>();
 
         /// <summary>
         /// Default single line distance.
@@ -122,8 +122,21 @@ namespace Ikonoclast.Common.Editor
             }
         }
 
-        public static Vector2 ScreenMousePosition =>
-            GUIUtility.GUIToScreenPoint(Event.current.mousePosition);
+        public static Vector2 ScreenMousePosition
+        {
+            get
+            {
+                var evt = Event.current;
+
+                if (evt == null)
+                {
+                    Debug.LogWarning("Null event");
+                    return Vector2.zero;
+                }
+
+                return GUIUtility.GUIToScreenPoint(evt.mousePosition);
+            }
+        }
 
         #endregion
 
@@ -160,6 +173,40 @@ namespace Ikonoclast.Common.Editor
         public static bool IsPrefab(GameObject go) => go
             ? PrefabUtility.GetCorrespondingObjectFromSource(go) != null
             : false;
+
+        /// <summary>
+        /// Generate a unique ID for calls to GUI.Window.
+        /// </summary>
+        /// <detail>
+        /// Useful when using several windows within one OnGUI call.
+        /// </detail>
+        public static int GenerateUniqueSessionID()
+        {
+            int uniqueID = UnityEngine.Random.Range(1, int.MaxValue);
+
+            for (; !sessionIDs.Add(uniqueID); uniqueID = UnityEngine.Random.Range(1, int.MaxValue)) ;
+
+            sessionIDs.Add(uniqueID);
+
+            return uniqueID;
+        }
+
+        public static void ShowObjectPicker<T>(
+            out int id,
+            T selected = null,
+            bool allowSceneObjects = false,
+            string searchFilter = null) where T : UnityObject
+        {
+            EditorGUIUtility.ShowObjectPicker<T>(
+                obj: selected,
+                searchFilter: searchFilter,
+                allowSceneObjects: allowSceneObjects,
+                controlID: id = GUIUtility.GetControlID(FocusType.Passive) + 100);
+        }
+
+        public static bool HasObjectPickerClosed(int id) =>
+            Event.current?.commandName == "ObjectSelectorClosed"
+            && EditorGUIUtility.GetObjectPickerControlID() == id;
 
         /// <summary>
         /// Pings an asset in the project folder.
@@ -210,19 +257,19 @@ namespace Ikonoclast.Common.Editor
         /// <returns>A new instantiated object, or null.</returns>
         public static T GetInstance<T>(string name)
         {
-            var type = System.Type.GetType(name);
+            var type = Type.GetType(name);
 
             T instance = default;
 
             if (type != null)
             {
-                instance = (T)System.Activator.CreateInstance(type);
+                instance = (T)Activator.CreateInstance(type);
 
                 if (instance != null)
                     return instance;
             }
 
-            foreach (var asm in System.AppDomain.CurrentDomain.GetAssemblies())
+            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             {
                 type = asm.GetTypes()?.FirstOrDefault(t => t.Name == name);
 
@@ -230,9 +277,9 @@ namespace Ikonoclast.Common.Editor
                 {
                     try
                     {
-                        instance = (T)System.Activator.CreateInstance(type);
+                        instance = (T)Activator.CreateInstance(type);
                     }
-                    catch (System.InvalidCastException) { }
+                    catch (InvalidCastException) { }
 
                     if (instance != null)
                         return instance;
@@ -368,7 +415,7 @@ namespace Ikonoclast.Common.Editor
             EditorGUI.DrawRect(rect, new Color(0.5f, 0.5f, 0.5f, 1));
         }
 
-        public static void IconButton(Rect position, System.Action buttonAction, GUIContent icon, string tooltip = null)
+        public static void IconButton(Rect position, Action buttonAction, GUIContent icon, string tooltip = null)
         {
             if (GUI.Button(position, new GUIContent("", tooltip ?? "")))
             {
@@ -378,7 +425,7 @@ namespace Ikonoclast.Common.Editor
             GUI.Label(position, icon);
         }
 
-        public static void IconButton(Rect position, Rect iconPosition, System.Action buttonAction, GUIContent icon, string tooltip = null)
+        public static void IconButton(Rect position, Rect iconPosition, Action buttonAction, GUIContent icon, string tooltip = null)
         {
             if (GUI.Button(position, new GUIContent("", tooltip ?? "")))
             {
