@@ -20,6 +20,8 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - Shortcuts
 - PanelUtils
 - UnityIcons
+- Extensions
+ - AssetDatabase
 
 ## Runtime Support
 
@@ -71,3 +73,19 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - Direction (Horizontal, Vertical)
 - InterpretedValue
 - Range
+
+### Utilities
+
+- Extensions
+ - Enum
+ - String
+ - Queue
+ - HashSet
+ - Vector (2, 3)
+ - Time
+ - Random
+ - Texture2D
+ - VisualElement
+ - Component
+ - GameObject
+ - Object
