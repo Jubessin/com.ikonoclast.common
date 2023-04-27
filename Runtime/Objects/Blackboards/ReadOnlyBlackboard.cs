@@ -71,6 +71,9 @@ namespace Ikonoclast.Common
             value = source.GetString(key);
         }
 
+        public bool IsPersistent(string key) =>
+            source.IsPersistent(key);
+
         public bool TryAddObserver(IObserver observer)
         {
             if (source is IObservable observable)

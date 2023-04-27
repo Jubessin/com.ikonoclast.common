@@ -28,13 +28,16 @@ Unity package used in the development of Ikonoclast projects, containing common 
 ### Constants
 
 - Colors
-- Values
 
 ### Interfaces
 
+- IBlackboard
+- IBlackboardReader
+- IBlackboardWriter
 - IContainer
 - ICreatableAsset
 - IDirection
+- IDispatcher
 - IIdentity
 - IObservable
 - IObserver
@@ -45,12 +48,6 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - ISaveObject
 - ISingleInstanceAsset
 
-#### Blackboards
-
-- IBlackboard
-- IBlackboardReader
-- IBlackboardWriter
-
 ### Objects
 
 - Definition
@@ -59,10 +56,9 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - Map
 - RelationalMapper
 - RuntimeContainer
+- ScriptableReferenceDatabase
+- ScriptableResourceDatabase
 - Viewable
-
-#### Blackboards
-
 - Blackboard
 - ObservableBlackboard
 - ReadOnlyBlackboard
@@ -71,11 +67,11 @@ Unity package used in the development of Ikonoclast projects, containing common 
 
 - Comparison
 - Direction (Horizontal, Vertical)
-- InterpretedValue
 - Range
 
 ### Utilities
 
+- Delays
 - Extensions
  - Enum
  - String

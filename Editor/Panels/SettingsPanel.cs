@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Ikonoclast.Common.Editor
@@ -11,6 +12,7 @@ namespace Ikonoclast.Common.Editor
     /// <summary>
     /// Base class for settings panels.
     /// </summary>
+    [Obsolete]
     public abstract class SettingsPanel : Panel, IEditorSaveObject
     {
         #region Events
