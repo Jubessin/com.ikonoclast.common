@@ -27,7 +27,7 @@ namespace Ikonoclast.Common
         #region Properties
 
         public static Blackboard Empty =>
-            _empty ?? (_empty = new Blackboard(null));
+            _empty ??= new Blackboard(null);
 
         [JsonIgnore]
         public virtual object this[string key, bool persistent]
@@ -100,6 +100,8 @@ namespace Ikonoclast.Common
             if (this == Empty)
                 throw new NotSupportedException();
 
+            persistentIDMap.AddRange(map.Keys);
+
             Copy(map);
         }
 
@@ -107,8 +109,11 @@ namespace Ikonoclast.Common
 
         #region IBlackboard Implementations
 
+        public bool IsPersistent(string key) =>
+            persistentIDMap.Contains(key);
+
         public ReadOnlyBlackboard AsReadOnly =>
-            readOnlyCache ?? (readOnlyCache = new ReadOnlyBlackboard(this));
+            readOnlyCache ??= new ReadOnlyBlackboard(this);
 
         #endregion
 

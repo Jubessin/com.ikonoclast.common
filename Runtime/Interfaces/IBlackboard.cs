@@ -28,5 +28,7 @@
         public void GetSingle(string key, out float value);
         public void GetBoolean(string key, out bool value);
         public void GetString(string key, out string value);
+
+        public bool IsPersistent(string key);
     }
 }

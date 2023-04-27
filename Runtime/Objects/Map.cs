@@ -28,6 +28,10 @@ namespace Ikonoclast.Common
         public string ID => _id;
 
         [JsonIgnore]
+        internal IEnumerable<string> Keys =>
+            _data.Keys;
+
+        [JsonIgnore]
         public virtual object this[string key]
         {
             protected get

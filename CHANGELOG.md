@@ -11,6 +11,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Logger
 
+## [4.0.0] --- 2023-04-27
+
+### Added
+
+- Scriptable Object databases (Resource and Reference)
+
+### Changed
+
+- exposed Map keys internally
+- added IsPersistent property to IBlackboard
+- fixed Blackboard deserialization issue
+- obsoleted SettingsPanel
+
+### Removed
+
+- Values constants
+- InterpretedValue class 
+
 ## [3.2.0] --- 2023-04-16
 
 ### Added
