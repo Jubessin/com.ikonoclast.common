@@ -3,15 +3,26 @@ using System.Collections.Generic;
 
 namespace Ikonoclast.Common
 {
+    /// <summary>
+    /// This database loads references to scriptable objects at runtime. 
+    /// </summary>
     public abstract class ScriptableResourceDatabase<TData> : IScriptableDatabase<TData>
         where TData : ScriptableObject, IIdentity<string>
     {
         #region Fields
 
-        private bool isLoaded;
-
-        private readonly Dictionary<string, TData>
+        protected readonly Dictionary<string, TData>
             assetMap = new Dictionary<string, TData>();
+
+        #endregion
+
+        #region Properties
+
+        public bool IsLoaded
+        {
+            get;
+            protected set;
+        }
 
         #endregion
 
@@ -21,7 +32,7 @@ namespace Ikonoclast.Common
         {
             get
             {
-                if (!isLoaded)
+                if (!IsLoaded)
                 {
                     var assets = Resources.LoadAll<TData>(string.Empty);
 
@@ -30,13 +41,13 @@ namespace Ikonoclast.Common
                         assetMap[asset.ID] = asset;
                     }
 
-                    isLoaded = true;
+                    IsLoaded = true;
                 }
 
                 if (assetMap.TryGetValue(key, out var data))
                     return data;
 
-                Debug.LogWarning($"Asset with key: {key} does not exist in Resources.");
+                Debug.LogWarning($"Asset with key: {key} does not exist in the Resources folder.");
 
                 return null;
             }
@@ -46,7 +57,7 @@ namespace Ikonoclast.Common
         {
             assetMap.Clear();
 
-            isLoaded = false;
+            IsLoaded = false;
         }
 
         #endregion

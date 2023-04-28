@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Logger
 
+## [4.1.0] --- 2023-04-27
+
+### Changed
+
+- changed access modifiers on Scriptable database classes and interface
+
 ## [4.0.0] --- 2023-04-27
 
 ### Added
