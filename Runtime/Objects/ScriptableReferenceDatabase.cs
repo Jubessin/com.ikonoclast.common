@@ -13,9 +13,9 @@ namespace Ikonoclast.Common
         #region Fields
 
         [SerializeField]
-        private List<TData> assets;
+        protected List<TData> assets;
 
-        private readonly Dictionary<string, TData>
+        protected readonly Dictionary<string, TData>
             assetMap = new Dictionary<string, TData>();
 
         #endregion
@@ -31,7 +31,7 @@ namespace Ikonoclast.Common
 
                 data = assets.FirstOrDefault(_data => _data.ID == key);
 
-                if (!data)
+                if (data == null)
                 {
                     Debug.LogWarning($"Could not find asset with key: {key}.");
 
