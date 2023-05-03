@@ -63,6 +63,8 @@ namespace Ikonoclast.Common
 
             var map = new Map(ID);
 
+            persistentIDMap.RemoveWhere(id => !HasKey(id));
+
             foreach (var id in persistentIDMap)
             {
                 map[id] = base[id];
@@ -71,10 +73,28 @@ namespace Ikonoclast.Common
             return map;
         }
 
+        void ISaveObject.Deserialize(Map map)
+        {
+            if (this == Empty)
+                throw new NotSupportedException();
+
+            if (map == null)
+                return;
+
+            persistentIDMap.AddRange(map.Keys);
+
+            Copy(map);
+        }
+
         void ISaveObject.Serialize(Map map, bool overwrite)
         {
             if (this == Empty)
                 throw new NotSupportedException();
+
+            if (map == null)
+                return;
+
+            persistentIDMap.RemoveWhere(id => !HasKey(id));
 
             if (!overwrite)
             {
@@ -93,16 +113,6 @@ namespace Ikonoclast.Common
                     map[id] = base[id];
                 }
             }
-        }
-
-        void ISaveObject.Deserialize(Map map)
-        {
-            if (this == Empty)
-                throw new NotSupportedException();
-
-            persistentIDMap.AddRange(map.Keys);
-
-            Copy(map);
         }
 
         #endregion

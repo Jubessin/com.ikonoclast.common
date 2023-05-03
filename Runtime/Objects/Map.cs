@@ -77,6 +77,9 @@ namespace Ikonoclast.Common
         public bool HasKey(string key) =>
             _data.ContainsKey(key);
 
+        public bool RemoveKey(string key) =>
+            _data.Remove(key);
+
         public T Get<T>(string key) =>
             this[key] is T tValue
                 ? tValue
@@ -147,7 +150,7 @@ namespace Ikonoclast.Common
 
         protected void Copy(Map map)
         {
-            if (map == null || map._data == null)
+            if (map._data == null)
                 return;
 
             foreach (var kvp in map._data)
