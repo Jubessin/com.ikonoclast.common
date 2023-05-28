@@ -36,6 +36,8 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - IBlackboardWriter
 - IContainer
 - ICreatableAsset
+- IInjected
+- IInjectionResolver
 - IDirection
 - IDispatcher
 - IIdentity
@@ -53,6 +55,7 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - Definition
 - Dispatch
 - Entity
+- Injectable
 - Map
 - RelationalMapper
 - RuntimeContainer
