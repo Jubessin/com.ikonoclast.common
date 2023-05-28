@@ -10,10 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Logger
+- Blackboard Viewer
+
+### [5.0.0] --- 2023-05-28
+
+- IInjected
+- Injectable
+- IInjectionResolver
 
 ### Changed
 
-- ScriptableDatabase implementation
+- ScriptableDatabase implementations
 
 ## [4.2.0] --- 2023-05-02
 

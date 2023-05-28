@@ -2,14 +2,10 @@
 
 namespace Ikonoclast.Common
 {
-    public interface IScriptableDatabase<TData> : ICreatableAsset
-        where TData : ScriptableObject, IIdentity<string>
+    public interface IScriptableDatabase : ICreatableAsset
     {
-        TData this[string key]
-        {
-            get;
-        }
-
         void Clear();
+
+        T Get<T>(string key) where T : ScriptableObject, IIdentity<string>;
     }
 }
