@@ -6,7 +6,7 @@ namespace Ikonoclast.Common
     /// <summary>
     /// This database loads references to scriptable objects at runtime. 
     /// </summary>
-    public abstract class ScriptableResourceDatabase : IScriptableDatabase
+    public abstract class ScriptableResourceDatabase : ScriptableObject, IScriptableDatabase
     {
         #region IScriptableDatabase Implementations
 
