@@ -21,12 +21,14 @@ namespace Ikonoclast.Common
 
         public void ForceUpdateValue(string key, object value, bool persistent = false)
         {
-            base[key, persistent] = value;
+            var oldValue = base[key];
+
+            var eventArgs = new ObserverEventArgs(key, oldValue, base[key, persistent] = value);
 
             // notify observers
             for (int i = 0; i < observers.Count; ++i)
             {
-                observers[i]?.PropertyChanged(key);
+                observers[i]?.PropertyChanged(eventArgs);
             }
         }
 
@@ -45,12 +47,14 @@ namespace Ikonoclast.Common
                 if (base[key]?.Equals(value) == true)
                     return;
 
-                base[key] = value;
+                var oldValue = base[key];
+
+                var eventArgs = new ObserverEventArgs(key, oldValue, base[key] = value);
 
                 // notify observers
                 for (int i = 0; i < observers.Count; ++i)
                 {
-                    observers[i]?.PropertyChanged(key);
+                    observers[i]?.PropertyChanged(eventArgs);
                 }
             }
         }
@@ -62,12 +66,14 @@ namespace Ikonoclast.Common
                 if (base[key]?.Equals(value) == true)
                     return;
 
-                base[key, persistent] = value;
+                var oldValue = base[key];
+
+                var eventArgs = new ObserverEventArgs(key, oldValue, base[key, persistent] = value);
 
                 // notify observers
                 for (int i = 0; i < observers.Count; ++i)
                 {
-                    observers[i]?.PropertyChanged(key);
+                    observers[i]?.PropertyChanged(eventArgs);
                 }
             }
         }

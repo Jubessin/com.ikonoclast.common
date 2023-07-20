@@ -65,6 +65,7 @@ Unity package used in the development of Ikonoclast projects, containing common 
 - Blackboard
 - ObservableBlackboard
 - ReadOnlyBlackboard
+- ObserverEventArgs
 
 ### Types
 
